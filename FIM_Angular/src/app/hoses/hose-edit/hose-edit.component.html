@@ -1,0 +1,37 @@
+<div>
+    <form [formGroup]="editHoseForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+            <label for="nameInput" class="col-sm-2 col-form-label">Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="nameInput" value="{{ hose.name }}" formControlName="name">
+                <span
+                    *ngIf="!editHoseForm.get('name').valid && editHoseForm.get('name').touched"
+                    class="help-block">Please enter a vaild name.</span>
+            </div>   
+        </div>
+        <div formGroupName="hoseType">
+            <div class="form-group row">
+                <label for="diameterInput" class="col-sm-2 col-form-label">Diameter:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="diameterInput"  value="{{ hose.type.diameter }}" formControlName="diameter">
+                    <span
+                        *ngIf="!editHoseForm.get('hoseType.diameter').valid && editHoseForm.get('hoseType.diameter').touched"
+                        class="help-block">Please enter a vaild diameter.</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lengthInput" class="col-sm-2 col-form-label">Length:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="lengthInput" value="{{ hose.type.length }}" formControlName="length">
+                    <span
+                        *ngIf="!editHoseForm.get('hoseType.length').valid && editHoseForm.get('hoseType.length').touched"
+                        class="help-block">Please enter a vaild length.</span>
+                </div>
+            </div>
+        </div>
+        <div class="btn-group pull-right">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-primary" (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>

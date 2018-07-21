@@ -1,0 +1,42 @@
+<div>
+  <h4>Add New Hose</h4>
+    <form [formGroup]="addHoseForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="nameInput" placeholder="Name" formControlName="name">
+                <span 
+                  *ngIf="!addHoseForm.get('name').valid && addHoseForm.get('name').touched"
+                  class="help-block">Please enter a valid name.</span>
+            </div>   
+        </div>
+        <div formGroupName="hoseType">
+            <div class="form-group row">
+                    <div class="col-sm-12">
+                        <select class="form-control" name="hoseDiameter" id="hoseDiameter" (change)="onDiameterChange($event)" formControlName="diameter">
+                            <option [ngValue]="null" disabled>Diameter</option>>
+                            <option *ngFor="let diameter of hoseDiameters" value='{{ diameter }}'>{{ diameter }} in</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <select class="form-control" name="hoseLength" id="hoseLength" (change)="onLengthChange($event)" formControlName="length">
+                        <option [ngValue]="null" disabled>Length</option>>
+                        <option *ngFor="let length of hoseLengths" value='{{ length }}'>{{ length }} ft</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="btn-group pull-right">
+            <button type="submit" class="btn btn-primary">Add</button>
+            <button 
+              type="button" 
+              class="btn btn-primary"
+              (click)="onCancel()">Cancel</button>
+        </div>
+        <button 
+            type="button" 
+            class="btn btn-primary"
+            (click)="onAddType()">Add Type</button>
+    </form>
+</div>

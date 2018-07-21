@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3>{{ hose.name }}</h3>
+  </div>
+</div>
+<div class="row" style="margin-bottom:10px">
+  <div class="col-xs-12">
+    <div>
+        Length: {{ hose.type.length }}ft
+    </div>
+    <div>
+        Diameter: {{ hose.type.diameter }}in
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+      <div 
+        class="btn-group"
+        appDropdown>
+        <button 
+          type="button" 
+          class="btn btn-primary dropdown-toggle">
+          Manage Hose <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a [routerLink]="['edit']">Edit Hose</a></li>
+          <li><a [routerLink]="['delete']">Delete Hose</a></li>
+        </ul>
+    </div>
+  </div>

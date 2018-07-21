@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-success" [routerLink]="['add']">Add Hose</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <app-hose-item
+    *ngFor="let hose of hoses"
+    [hose]="hose"></app-hose-item>
+  </div>
+</div>

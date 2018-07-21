@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th:="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/8.100.2/css/materialize.min.css" />
+</head>
+<body>
+    <div class="container">
+        <div th:if="${not #lists.isEmpty(hoses)}">
+            <h1>Hoses List</h1>
+            <table class = "highlight">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Diameter</th>
+                    <th>Length</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="hose: @{hoses}">
+                        <td th:text="${hose.id}"/>
+                        <td th:text="${hose.name}"/>
+                        <td th:text="${hose.type.diameter}"/>
+                        <td th:text="${hose.type.length}"/>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

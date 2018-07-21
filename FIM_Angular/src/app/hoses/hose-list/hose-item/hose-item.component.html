@@ -1,0 +1,10 @@
+<a 
+  [routerLink]="['/hoses', hose.id]"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ hose.name }}</h4>
+    Length: {{ hose.type.length }}ft
+    <br>
+    Diameter: {{ hose.type.diameter }}in
+  </div>
+</a>

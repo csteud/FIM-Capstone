@@ -1,0 +1,19 @@
+<div>
+  <h4>Add New Hose Type</h4>
+  <form [formGroup]="addTypeForm" (ngSubmit)="onSubmit()">
+    <div class="form-group row">
+      <div class="col-sm-12">
+        <input type="number" class="form-control" id="diameterInput" placeholder="Diameter in inches" formControlName="diameter">
+      </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-12">
+          <input type="number" class="form-control" id="lengthInput" placeholder="Length in feet" formControlName="length">
+        </div>
+      </div>
+      <div class="btn-group pull-right">
+          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="button" class="btn btn-primary" (click)="onCancel()">Cancel</button>
+      </div>
+  </form>
+</div>
