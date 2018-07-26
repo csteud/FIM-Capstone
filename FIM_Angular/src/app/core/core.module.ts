@@ -3,11 +3,13 @@ import { SharedModule } from "../shared/shared.module";
 import { HeaderComponent } from "./header/header.component";
 import { HomeComponent } from "./home/home.component";
 import { AppRoutingModule } from "../app-routing.module";
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
     declarations: [
         HeaderComponent,
-        HomeComponent
+        HomeComponent,
+        NotFoundComponent
     ],
     imports: [
         SharedModule,

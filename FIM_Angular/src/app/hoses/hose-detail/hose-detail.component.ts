@@ -24,9 +24,10 @@ export class HoseDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
+
           this.hoseService.hosesUpdated
             .subscribe(
-              (hoses: Hose[]) => {
+              () => {
               this.hoseService.getHose(this.id)
                 .subscribe(
                   (hose: Hose) => {
@@ -34,7 +35,14 @@ export class HoseDetailComponent implements OnInit {
                   }
                 );
               }
-            ); 
+            );
+
+          this.hoseService.getHose(this.id)
+            .subscribe(
+              (hose: Hose) => {
+                this.hose = hose;
+              }
+            );
         }
       );
   }

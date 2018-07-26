@@ -1,7 +1,12 @@
-package com.example.demo.hose;
+package com.fim.hose;
 
 import javax.persistence.*;
 
+/**
+ * <code> Type </code> is the Class defining what a Hose is
+ * @author Cory Steudeman
+ * @version 0.1
+ */
 @Entity
 public class Hose {
 

@@ -1,10 +1,15 @@
-package com.example.demo.hose;
+package com.fim.hose;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * <code> Type </code> is the Class defining what a Type is
+ * @author Cory Steudeman
+ * @version 0.1
+ */
 @Entity
 @Table(name = "hose_type")
 public class Type {

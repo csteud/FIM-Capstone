@@ -12,7 +12,7 @@ const hosesRoutes: Routes = [
     { path: '', component: HosesComponent, children: [ 
         {path: ':id/edit', component: HoseEditComponent},
         {path: ':id/delete', component: HoseDeleteComponent},
-        {path: 'add', component: HoseAddComponent},
+        {path: 'add', component: HoseAddComponent, pathMatch: 'full'},
         {path: 'add/type', component: HoseAddTypeComponent},
         {path: ':id', component: HoseDetailComponent}
     ] }
