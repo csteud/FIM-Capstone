@@ -5,7 +5,6 @@ import com.fim.hose.HoseNotFoundException;
 import com.fim.hose.Type;
 import com.fim.repository.HoseRepository;
 import com.fim.repository.TypeRepository;
-import javassist.tools.web.BadHttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
