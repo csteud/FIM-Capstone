@@ -2,6 +2,8 @@ package com.fim;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
  * <code> FIM </code> is the entry to the FIM application.
@@ -9,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 0.1
  */
 @SpringBootApplication
-public class FIM {
+public class FIM extends SpringBootServletInitializer {
 
 	/**
 	 * <code> main </code> is the entry to the FIM application.
@@ -17,5 +19,10 @@ public class FIM {
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(FIM.class, args);
+	}
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(FIM.class);
 	}
 }
